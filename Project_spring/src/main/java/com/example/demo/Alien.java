@@ -4,13 +4,13 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component //object created only once automatically 
-@Scope(value = "prototype") //will not create instance by default , denote class as component
+//@Scope(value = "prototype") //will not create instance by default , denote class as component
 public class Alien {
 
 	private int aid;
 	private String aname;
 	private String tech;
-	
+	private Laptop laptop;
 	
 	public Alien() {
 		super();
@@ -33,6 +33,18 @@ public class Alien {
 	}
 	public void setTech(String tech) {
 		this.tech = tech;
+	}
+	
+	
+	public Laptop getLaptop() {
+		return laptop;
+	}
+	public void setLaptop(Laptop laptop) {
+		this.laptop = laptop;
+	}
+	public void show() {
+		System.out.println("in show");
+		laptop.compile();
 	}
 	
 	
