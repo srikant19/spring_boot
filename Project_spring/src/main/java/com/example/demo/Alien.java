@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -11,13 +12,14 @@ public class Alien {
 	private int aid;
 	private String aname;
 	private String tech;
-	@Autowired
+	@Autowired//searches by type
+	@Qualifier("lap1") //searches by name
 	private Laptop laptop;
 	
 	public Alien() {
 		super();
 		System.out.println("object created");
-	}
+	} 
 	public int getAid() {
 		return aid;
 	}
